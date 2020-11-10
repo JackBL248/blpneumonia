@@ -177,9 +177,10 @@ class Model(object):
                         # improvement in loss
                         early_stop_counter += 1
 
-                # If loss has not improved for 15 epochs, stop the training
+                # If loss has not improved for given number of epochs, 
+                # stop the training
             if early_stop_counter == patience:
-                print("No improvement in loss for 15 epochs. \n")
+                print("No improvement in loss for %d epochs. \n" % patience)
                 break
 
         time_elapsed = time.time() - since
