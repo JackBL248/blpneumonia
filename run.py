@@ -14,11 +14,11 @@ def main():
         args.rotation, args.scale, args.shear)
     # create dataloaders
     train_dataloader = get_dataloader(
-        args.root_path, "train", train_transforms, args.batch, args.workers)
+        args.datafolder, "train", train_transforms, args.batch, args.workers)
     val_dataloader = get_dataloader(
-        args.root_path, "val", test_transforms, args.batch, args.workers)
+        args.datafolder, "val", test_transforms, args.batch, args.workers)
     test_dataloader = get_dataloader(
-        args.root_path, "test", test_transforms, args.batch, args.workers)
+        args.datafolder, "test", test_transforms, args.batch, args.workers)
 
     dataloaders = {"train": train_dataloader, "val": val_dataloader}
 
