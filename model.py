@@ -177,7 +177,7 @@ class Model(object):
                         # improvement in loss
                         early_stop_counter += 1
 
-                # If loss has not improved for given number of epochs, 
+                # If loss has not improved for given number of epochs,
                 # stop the training
             if early_stop_counter == patience:
                 print("No improvement in loss for %d epochs. \n" % patience)
@@ -244,9 +244,11 @@ def test(
     test_specificity = negatives_pred / negatives
     # print and write test results to file
     test_acc_text = 'Test Acc: {:4f}'.format(test_accuracy)
-    test_sens_text = 'Test Acc: {:4f}'.format(test_sensitivity)
-    test_spec_text = 'Test Acc: {:4f}'.format(test_specificity)
+    test_sens_text = 'Test Sens: {:4f}'.format(test_sensitivity)
+    test_spec_text = 'Test Spec: {:4f}'.format(test_specificity)
     print(test_acc_text)
+    print(test_sens_text)
+    print(test_spec_text)
     with open(self.log, "a+") as f:
         f.write(test_acc_text+"\n")
         f.write(test_sens_text+"\n")
